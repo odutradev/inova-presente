@@ -62,6 +62,14 @@ export const ButtonsContainer = styled.div`
     display: flex;
     width: 80%;
 `
+export const Icon = styled.div`
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: 10px 0;
+
+`
 
 export const Label = styled.label`
     color: ${({theme}) => theme.colors.secondaryText};

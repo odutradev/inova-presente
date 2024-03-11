@@ -1,8 +1,10 @@
 import React, { useEffect, useState }from 'react';
 import { toast } from 'react-toastify';
 import { AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineIdcard } from "react-icons/ai";
+import { QrReader } from 'react-qr-reader';
 
-import { Container, Box, ButtonsContainer, TextContainer, IconContainer } from './styles';
+import { Container, Box, ButtonsContainer, TextContainer, IconContainer, Icon } from './styles';
 import Navinfo from '../../components/navinfo';
 import category from '../../actions/classe';
 import Layout from '../../components/layout';
@@ -13,7 +15,9 @@ import TimeEditor from './editor'
 
 const TimelineEditor = ({data, id, onBack, update}) => {
     const [values, setValues] = useState({name:"", description:""});
+    const [presence, setPresence] = useState(null);
     const [editor, setEditor] = useState(null);
+    const [code, setCode] = useState('No result');
 
     const sendData = async () => {  
         const send = async () => {
@@ -48,6 +52,23 @@ const TimelineEditor = ({data, id, onBack, update}) => {
 
     if (!values) return <Loading layout/>
     if (editor != null) return <TimeEditor data={values.timeline} classeID={id} id={editor != true ? editor : null} onBack={() => setEditor(null) & update()}/> 
+    if (presence != null) return (
+      <Layout>
+          <QrReader
+        onResult={(result, error) => {
+          if (!!result) {
+            setCode(result?.text);
+          }
+
+          if (!!error) {
+            console.info(error);
+          }
+        }}
+        style={{ width: '100%' }}
+      />
+      </Layout>
+    )
+
     return (
         <Layout>
             <Navinfo name={"Aulas"} subname={"aulas"} buttonName={"adicionar"} size={values.timeline?.length || 0} onButton={() => setEditor(true)}/>
@@ -59,6 +80,9 @@ const TimelineEditor = ({data, id, onBack, update}) => {
                     <TextContainer>
                       <h3>{item.name}</h3>
                       <p>{item.description ? item.description : "sem descrição."}</p>
+                      <Icon>
+                        <AiOutlineIdcard color='#eeeeee' size={25} onClick={() => setPresence(true)}/>
+                      </Icon>
                     </TextContainer>
                     <IconContainer> 
                       <AiOutlineDelete class="icon" size={30} onClick={() => deleteCategory(item._id)}/>

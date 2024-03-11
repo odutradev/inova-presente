@@ -7,7 +7,7 @@ import Dashboard from "../pages/dashboard";
 import Auth from "./auth";
 import Settings from "../pages/settings";
 import Cart from "../pages/cart";
-import Profile from "../pages/profile";
+import Presence from "../pages/presence";
 import Classes from "../pages/classes";
 import Users from "../pages/users";
 import SignUp from "../pages/signup";
@@ -33,8 +33,8 @@ export const Router = () => {
           element={<Auth element={<Cart />} />}
         />
         <Route
-          path="/dashboard/profile"
-          element={<Auth element={<Profile />} />}
+          path="/dashboard/presence"
+          element={<Auth element={<Presence />} />}
         />
         <Route
           path="/dashboard/classes"
