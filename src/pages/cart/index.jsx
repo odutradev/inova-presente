@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { Container, Box, TextContainer, IconContainer, Label, TextBox, Image, ImageContainer, FiltersContainer } from './styles';
 import formatCurrency from '../../services/formatCurrency';
 import addHttpsLink from '../../services/addHttpsLink';
-import categoryAction from '../../actions/category';
+import categoryAction from '../../actions/classe';
 import Dropdown from '../../components/dropdown';
 import Loading from '../../components/loading';
 import Navinfo from '../../components/navinfo';

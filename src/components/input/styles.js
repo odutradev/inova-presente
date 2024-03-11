@@ -15,7 +15,7 @@ export const Container = styled.input`
   border: none;
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.015);
     transition: 0.5s;
     cursor: pointer;
   }

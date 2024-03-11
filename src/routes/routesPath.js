@@ -7,24 +7,9 @@ const routesPath = [
         route: "/dashboard"
       },
       {
-        name: "Carrinho",
-        icon: AiOutlineShoppingCart,
-        route: "/dashboard/cart"
-      },
-      {
-        name: "Categorias",
+        name: "Turmas",
         icon: AiOutlineFolderAdd,
-        route: "/dashboard/category"
-      },
-      {
-        name: "Usuarios",
-        icon: AiOutlineUserSwitch,
-        route: "/dashboard/users"
-      },
-      {
-        name: "Sobre mim",
-        icon: AiOutlineSolution,
-        route: "/dashboard/profile"
+        route: "/dashboard/classes"
       },
       {
         name: "Configurações",

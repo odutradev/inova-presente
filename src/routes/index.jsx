@@ -8,8 +8,9 @@ import Auth from "./auth";
 import Settings from "../pages/settings";
 import Cart from "../pages/cart";
 import Profile from "../pages/profile";
-import Categorys from "../pages/categorys";
+import Classes from "../pages/classes";
 import Users from "../pages/users";
+import SignUp from "../pages/signup";
 
 export const Router = () => {
   return (
@@ -36,12 +37,16 @@ export const Router = () => {
           element={<Auth element={<Profile />} />}
         />
         <Route
-          path="/dashboard/category"
-          element={<Auth element={<Categorys />} />}
+          path="/dashboard/classes"
+          element={<Auth element={<Classes />} />}
         />
         <Route
           path="/dashboard/users"
           element={<Auth element={<Users />} />}
+        />
+        <Route
+          path="/signup"
+          element={<SignUp />}
         />
       </Routes>
     </BrowserRouter>

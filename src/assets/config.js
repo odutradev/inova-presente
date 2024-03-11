@@ -1,4 +1,4 @@
 export default {
     pageTitle: "Inova Presente",
-    baseURL: "http://localhost:3000/v1" 
+    baseURL: "https://api.agenciamaisfacil.com.br:9000/v1" 
 }

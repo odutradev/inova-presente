@@ -17,7 +17,7 @@ export const Box = styled.div`
     display: flex;
     padding: 20px;
     height: auto;
-    min-height: 60%;
+    min-height: 65%;
     width: 40%;
     @media (max-width: 767px) { 
         width: 90%;

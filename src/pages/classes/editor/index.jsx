@@ -2,7 +2,7 @@ import React, { useEffect, useState }from 'react';
 import { toast } from 'react-toastify';
 
 import { Container, Box, ButtonsContainer } from './styles';
-import category from '../../../actions/category';
+import category from '../../../actions/classe';
 import Layout from '../../../components/layout';
 import Button from '../../../components/button';
 import Input from '../../../components/input';
@@ -29,11 +29,11 @@ const CategoryEditor = ({data, id, onBack}) => {
         <Layout>
             <Container>
               <Box>
-                <Input placeholder={"Nome"} value={values.name} setValue={(x) => setValues({...values, name: x})}/>
-                <Input placeholder={"Descrição"} value={values.description} setValue={(x) => setValues({...values, description: x})}/>
+                <Input placeholder={"Nome"} value={values.name} width='90%' setValue={(x) => setValues({...values, name: x})}/>
+                <Input placeholder={"Descrição"} value={values.description}  width='90%' setValue={(x) => setValues({...values, description: x})}/>
                 <ButtonsContainer>
                   <Button name={"CANCELAR"} color='error'  text='text' width="50%" onClick={onBack}/>
-                  <Button name={id ? "ATUALIZAR" : "CRIAR"}  width="50%" onClick={sendData}/>
+                  <Button name={id ? "ATUALIZAR" : "CRIAR"}  text='text' width="50%" onClick={sendData}/>
                 </ButtonsContainer>
               </Box>
             </Container>

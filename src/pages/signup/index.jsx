@@ -6,8 +6,9 @@ import Button from '../../components/button';
 import Input from '../../components/input';
 import user from '../../actions/user';
 
-const Main = () => {
+const SignUp = () => {
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   const signIn = async () => {
@@ -23,8 +24,8 @@ const Main = () => {
   }
 
   const signUp = async () => {
-    if (!email || !password) return toast.error('Preencha todos os campos');
-    const response = await user.signUp({ name: email, password });
+    if (!email || !password || !name) return toast.error('Preencha todos os campos');
+    const response = await user.signUp({ email, password, name });
     if (response.error) {
       return toast.error(response.error);
     }
@@ -38,9 +39,13 @@ const Main = () => {
     <Container>
       <Box>
         <Title>
-          Bem vindo de volta
+          Bem vindo ao <span>InovaPresente</span>
         </Title>
         <InputsContainer>
+          <div className="label">
+           <label>Nome</label>
+          </div>
+          <Input placeholder={"nome completo"} value={name} setValue={setName} />
           <div className="label">
            <label>Email</label>
           </div>
@@ -50,15 +55,15 @@ const Main = () => {
           </div>
           <Input placeholder={"******"} type="password" value={password} setValue={setPassword} />
           <div className="signup">
-            <a href="/signup">Não tem uma conta? cadastre-se</a>
+            <a href="/">Já tem uma conta? Entre</a>
           </div>
         </InputsContainer>
         <ButtonsContainer>
-          <Button name={'ENTRAR'} text='text' width='100%' onClick={signIn} />
+          <Button name={'CADASTRAR'} text='text' width='100%' onClick={signUp} />
         </ButtonsContainer>
       </Box>
     </Container>
   )
 }
 
-export default Main;
+export default SignUp;

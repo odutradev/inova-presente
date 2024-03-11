@@ -29,7 +29,7 @@ const Settings = () => {
     <Layout>
       <Container>
           <Box>
-              <Button name={"APAGAR MINHA CONTA"} onClick={remove} width='60%' text='text' color='error'/>
+
               <Button name={"DESLOGAR"} onClick={logout} width='60%' text='text'/>
           </Box>
       </Container>
@@ -38,3 +38,6 @@ const Settings = () => {
 }
 
 export default Settings;
+
+
+//              <Button name={"APAGAR MINHA CONTA"} onClick={remove} width='60%' text='text' color='error'/>

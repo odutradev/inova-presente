@@ -16,8 +16,8 @@ export const Container = styled.button`
 
   &:hover {
       color: ${({ theme }) => theme.colors.text};
-      filter: brightness(1.5);
-      transform: scale(1.05);
+      filter: brightness(1.1);
+      transform: scale(1.02);
       transition: 0.5s;
       cursor: pointer;
   }
