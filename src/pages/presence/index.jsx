@@ -40,6 +40,15 @@ const Presence = () => {
   }, [])
 
   if (!user) return <Loading layout/>;
+  function createToken(data) {
+    // Converte os dados para JSON
+    const jsonData = JSON.stringify(data);
+    
+    // Codifica os dados em base64
+    const token = btoa(jsonData);
+    
+    return token;
+  }
 
   return (
     <Layout>
@@ -47,7 +56,20 @@ const Presence = () => {
             {
               qrcode ? (
                 <QrcodeBox>
-                <QRCode value={} fgColor={'rgba(13,13,143,1)'}/>
+                <QRCode value={ window.location.origin + "/add-presence/" +createToken({
+    id: user._id, 
+    date: Date.now(),
+    data: {
+      contentQuality, isItApplicable, facilitator, goodTeaching
+    }
+  }) } fgColor={'rgba(13,13,143,1)'}/>
+<a href={window.location.origin + "/add-presence/" + createToken({
+    id: user._id, 
+    date: Date.now(),
+    data: {
+      contentQuality, isItApplicable, facilitator, goodTeaching
+    }
+  })}>link</a>
                           </QrcodeBox>
               ): (
                   <Box>

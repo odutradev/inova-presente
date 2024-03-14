@@ -42,6 +42,14 @@ const addTimeline = async (data) => {
         return { error: error?.response?.data?.msg };
     }
 }
+const addPresence = async (data) => {
+    try {
+        const response = await api.post('/classe/add-presence', data);
+        return response.data;
+    } catch (error) {
+        return { error: error?.response?.data?.msg };
+    }
+}
 const deleteTimeline = async (data) => {
     try {
         const response = await api.post('/classe/remove-timeline',  data);
@@ -52,5 +60,5 @@ const deleteTimeline = async (data) => {
 }
 
 export default {
-    get, update, remove, create, addTimeline, deleteTimeline
+    get, update, remove, create, addTimeline, deleteTimeline, addPresence
 }

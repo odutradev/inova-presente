@@ -14,7 +14,7 @@ export const Box = styled.div`
     flex-direction: column;
     border-radius: 5px;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     display: flex;
     padding: 50px;
     height: auto;
@@ -29,35 +29,10 @@ export const Box = styled.div`
    }
 `
 
-export const QrcodeBox = styled.div`
-    background-color: ${({theme}) => theme.colors.secondaryBackground};
-    flex-direction: column;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding: 50px;
-    height: auto;
-    width: auto;
-    @media (max-width: 767px) { 
-        width: 90%;
-   }   
-   .button{
-    margin-top: 50px;
-    width: 100%;
-    height: auto;
-   }
-`
-
-export const Label = styled.label`
-    color: ${({theme}) => theme.colors.secondaryText};
-    margin: 15px 0;
-`
-
-export const SliderContainer = styled.div`
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
+export const ButtonContainer = styled.div`
     display: flex;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
 `

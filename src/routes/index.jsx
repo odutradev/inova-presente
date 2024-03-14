@@ -11,6 +11,7 @@ import Presence from "../pages/presence";
 import Classes from "../pages/classes";
 import Users from "../pages/users";
 import SignUp from "../pages/signup";
+import AddPresence from "../pages/addPresence";
 
 export const Router = () => {
   return (
@@ -35,6 +36,10 @@ export const Router = () => {
         <Route
           path="/dashboard/presence"
           element={<Auth element={<Presence />} />}
+        />
+        <Route
+          path="/add-presence/:id"
+          element={<Auth element={<AddPresence />} />}
         />
         <Route
           path="/dashboard/classes"

@@ -52,22 +52,39 @@ const TimelineEditor = ({data, id, onBack, update}) => {
 
     if (!values) return <Loading layout/>
     if (editor != null) return <TimeEditor data={values.timeline} classeID={id} id={editor != true ? editor : null} onBack={() => setEditor(null) & update()}/> 
-    if (presence != null) return (
+    if (presence != null) {
+     
+      return (
+        <Layout>
+          <Container>
+          {
+            values.timeline.find( x => x._id == presence).attendanceList.map(y => {
+              console.log(y)
+              return(
+              <Box>
+                <p>{y.name}</p>
+              </Box>
+            )})
+          }
+          </Container>
+        </Layout>
+      )
+      return (
       <Layout>
-          <QrReader
-        onResult={(result, error) => {
-          if (!!result) {
-            setCode(result?.text);
+        <Container>
+          {
+            values.find(x => x._id == presence).timeline.map(x => {
+              console.log(x)
+              return (
+                <Box>
+                  {x._id}
+                </Box>
+              )
+            })
           }
-
-          if (!!error) {
-            console.info(error);
-          }
-        }}
-        style={{ width: '100%' }}
-      />
+        </Container>
       </Layout>
-    )
+    )}
 
     return (
         <Layout>
@@ -81,7 +98,7 @@ const TimelineEditor = ({data, id, onBack, update}) => {
                       <h3>{item.name}</h3>
                       <p>{item.description ? item.description : "sem descrição."}</p>
                       <Icon>
-                        <AiOutlineIdcard color='#eeeeee' size={25} onClick={() => setPresence(true)}/>
+                        <AiOutlineIdcard color='#eeeeee' size={25} onClick={() => setPresence(item._id)}/>
                       </Icon>
                     </TextContainer>
                     <IconContainer> 
