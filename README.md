@@ -1,5 +1,5 @@
 # INOVA PRESENTE
-Painel de gestã de presenças, turmas e aulas.
+Painel de gestão de presenças, turmas e aulas.
 
 ## Tecnologias
 ### Linguagem de Programação:
