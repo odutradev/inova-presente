@@ -1,8 +1,8 @@
 {
-  "name": "myhouse",
+  "name": "inova-presente",
   "version": "1.0.0",
   "type": "module",
-  "description": "Template funcional para uso do react junto ao vite e styled-components.",
+  "description": "Painel de gestã de presenças, turmas e aulas.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
